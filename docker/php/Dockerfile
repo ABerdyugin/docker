@@ -1,4 +1,4 @@
-FROM php:7-fpm
+FROM php:8.0.2-fpm
 WORKDIR /var/www
 # Устанавливаем зависимости
 RUN apt-get update && apt-get install -y \
