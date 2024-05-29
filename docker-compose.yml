@@ -49,6 +49,21 @@ services:
     networks:
       - otus-network
 
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+    - './docker/redis/dаta:/root/redis'
+    - './docker/redis/redis.conf:/usr/local/etc/redis/redis.conf'
+    environment:
+      - REDIS_PASSWORD=redis
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
+    networks:
+      - otus-network
+
+
 # Docker Networks
 networks:
   otus-network:
